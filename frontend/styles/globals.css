@@ -1,1 +1,48 @@
-body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; padding:0; }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tambahan style */
+body {
+  @apply bg-gray-900 text-gray-100 font-sans;
+}
+
+.chat-container {
+  @apply flex h-screen;
+}
+
+.sidebar {
+  @apply w-1/4 bg-gray-800 border-r border-gray-700 hidden md:block;
+}
+
+.chat-panel {
+  @apply flex flex-col flex-1;
+}
+
+.chat-messages {
+  @apply flex-1 overflow-y-auto p-4 space-y-2;
+}
+
+.chat-bubble {
+  @apply max-w-xs px-4 py-2 rounded-2xl shadow;
+}
+
+.chat-bubble.me {
+  @apply bg-blue-600 text-white self-end rounded-br-none;
+}
+
+.chat-bubble.other {
+  @apply bg-gray-700 text-gray-200 self-start rounded-bl-none;
+}
+
+.chat-input {
+  @apply flex items-center gap-2 p-3 bg-gray-800 border-t border-gray-700;
+}
+
+.chat-input input {
+  @apply flex-1 bg-gray-700 text-white px-4 py-2 rounded-xl outline-none;
+}
+
+.chat-input button {
+  @apply bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-xl font-semibold;
+}
